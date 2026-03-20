@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optuna-catboost"
+version = "0.1.0"
+description = "A lightweight wrapper for CatBoost enabling seamless Optuna pruning on the GPU."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Silas Robitschko" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# These are the core packages REQUIRED to use your wrapper
+dependencies = [
+    "catboost>=1.0.0",
+    "optuna>=3.0.0"
+]
+
+# These are optional dependencies for developers working on the repo
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "scikit-learn>=1.0.0"
+]
+
+[tool.setuptools.packages.find]
+# Tells setuptools to only include the actual package folder, not tests or scripts
+include = ["optuna_catboost*"]
