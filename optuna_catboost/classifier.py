@@ -3,7 +3,7 @@
 from catboost import CatBoostClassifier
 import optuna
 import warnings
-from optuna_catboost import MAXIMIZE_METRICS
+from .utils import MAXIMIZE_METRICS
 
 class OptunaCatBoostClassifier(CatBoostClassifier):
     def __init__(self, trial=None, pruning_batches=100, **kwargs):
